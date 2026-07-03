@@ -1,0 +1,8 @@
+version: 2
+
+models:
+  - name: stg_raw_fitness_data
+    columns:
+      - name: gender
+        tests:
+          - not_null
