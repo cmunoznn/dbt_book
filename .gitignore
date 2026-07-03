@@ -3,3 +3,8 @@ dbt_internal_packages/
 logs/
 target/
 .env
+.env.*
+*.log
+.vscode/
+.DS_Store
+Thumbs.db
