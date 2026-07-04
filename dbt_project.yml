@@ -17,8 +17,8 @@ seeds:
 models:
   cmn11:
     +static_analysis: strict
-    # Materialize staging models as views, and marts as tables
+    # Materialize staging models as views, and marts as ephemeral
     staging:
       +materialized: view
     marts:
-      +materialized: table
+      +materialized: view
