@@ -6,3 +6,30 @@ models:
       - name: gender
         tests:
           - not_null
+          - accepted_values:
+              arguments:
+                values: ['Male']
+
+  - name: mart_fitness_data
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: diet_type
+        data_type: string
+        constraints:
+          - type: not_null
+      - name: max_age
+        data_type: float
+        constraints:
+          - type: not_null
+      - name: min_age
+        data_type: float
+        constraints:
+          - type: not_null
+        tests:
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: "> 0"
+
+
